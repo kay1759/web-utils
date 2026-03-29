@@ -1,0 +1,23 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "entryPointStrategy": "resolve",
+  "out": "docs",
+  "tsconfig": "tsconfig.json",
+  "name": "@wzs/web-utils",
+  "readme": "README.md",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "categorizeByGroup": true,
+  "sort": ["source-order"],
+  "cleanOutputDir": true,
+  "plugin": [],
+  "visibilityFilters": {
+   "private": false,
+   "protected": false,
+   "inherited": true,
+   "external": false
+  }
+}

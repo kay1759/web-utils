@@ -1,0 +1,74 @@
+{
+  "name": "@kay1759/web-utils",
+  "version": "0.1.0",
+  "description": "Reusable web utilities for CSRF, GraphQL, JWT, and React Router responses",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+   ".": {
+     "import": "./dist/index.js",
+     "types": "./dist/index.d.ts"
+   }
+  },
+  "files": [
+   "dist",
+   "README.md",
+   "LICENSE"
+  ],
+  "scripts": {
+   "build": "tsc -p tsconfig.json",
+   "test": "vitest run",
+   "test:watch": "vitest",
+   "clean": "rm -rf dist",
+   "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "publishConfig": {
+   "access": "public"
+  },
+  "keywords": [
+   "csrf",
+   "graphql",
+   "apollo",
+   "jwt",
+   "react-router",
+   "typescript"
+  ],
+  "repository": {
+   "type": "git",
+   "url": "git+https://github.com/kay1759/web-utils.git"
+  },
+  "homepage": "https://github.com/kay1759/web-utils#readme",
+  "bugs": {
+   "url": "https://github.com/kay1759/web-utils/issues"
+  },
+  "engines": {
+   "node": ">=18"
+  },
+  "peerDependencies": {
+   "@apollo/client": "^4.0.11",
+   "graphql": "^16.12.0",
+   "react-router-dom": "^7.11.0"
+  },
+  "devDependencies": {
+    "@apollo/client": "^4.0.11",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "graphql": "^16.12.0",
+    "jsdom": "^27.4.0",
+    "prettier": "^3.7.4",
+    "react-router-dom": "^7.11.0",
+    "typedoc": "^0.28.15",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}
