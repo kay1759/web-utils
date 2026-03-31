@@ -1,6 +1,11 @@
 # @kay1759/web-utils
 
-Reusable TypeScript utilities for React.
+![npm](https://img.shields.io/npm/v/@kay1759/web-utils)
+![license](https://img.shields.io/npm/l/@kay1759/web-utils)
+![downloads](https://img.shields.io/npm/dm/@kay1759/web-utils)
+![types](https://img.shields.io/npm/types/@kay1759/web-utils)
+
+Reusable TypeScript utilities for React apps, providing CSRF handling, Apollo GraphQL helpers, JWT utilities, and React Router-compatible responses.
 
 This library provides lightweight helpers for:
 
@@ -26,6 +31,31 @@ This library provides lightweight helpers for:
 
 ```bash
 npm install @kay1759/web-utils
+```
+
+Works with modern React applications using Apollo Client and React Router.
+
+## 🚀 Quick Start
+
+```ts
+import {
+  configureCsrf,
+  createApolloClient,
+  queryGraphQL,
+} from "@kay1759/web-utils";
+import { HttpLink } from "@apollo/client";
+
+configureCsrf({ endpoint: "/csrf" });
+
+const client = createApolloClient(
+  new HttpLink({
+    uri: "/graphql",
+    credentials: "include",
+  })
+);
+
+// fetch data with CSRF automatically handled
+const data = await queryGraphQL(client, QUERY);
 ```
 
 ---
@@ -58,7 +88,9 @@ await getCsrfToken(true); // force refresh
 
 ## 🔗 GraphQL (Apollo Client)
 
-### Create Apollo Client with CSRF support
+### Create Apollo Client with CSRF support (recommended)
+
+Automatically attaches CSRF token to all requests.
 
 ```ts
 import { createApolloClient } from "@kay1759/web-utils";
@@ -191,6 +223,7 @@ npx typedoc
 - Node.js 18+
 - TypeScript 5+
 - Apollo Client 4+
+- React Router v7 (optional)
 
 ---
 
