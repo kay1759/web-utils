@@ -1,6 +1,6 @@
-# @wzs/web-utils
+# @kay1759/web-utils
 
-Reusable TypeScript utilities for react.
+Reusable TypeScript utilities for React.
 
 This library provides lightweight helpers for:
 
@@ -77,7 +77,7 @@ const client = createApolloClient(httpLink);
 ### Query helper
 
 ```ts
-import { queryGraphQL } from "@wzs/kay1759-utils";
+import { queryGraphQL } from "@kay1759/web-utils";
 
 const data = await queryGraphQL(client, QUERY, { id: 1 });
 ```
@@ -87,7 +87,7 @@ const data = await queryGraphQL(client, QUERY, { id: 1 });
 ### Mutation helper
 
 ```ts
-import { mutateGraphQL } from "@wzs/kay1759-utils";
+import { mutateGraphQL } from "@kay1759/web-utils";
 
 const result = await mutateGraphQL(client, MUTATION, {
   name: "Alice",
@@ -124,10 +124,10 @@ if (isExpired(payload)) {
 import { configureAuthToken, setToken, getToken } from "@kay1759/web-utils";
 
 configureAuthToken({
-  key: "auth_token",
+  cookieName: "auth_token",
 });
 
-setToken("my-token");
+setToken({ token: "my-token" });
 
 const token = getToken();
 ```
@@ -181,7 +181,7 @@ npm test
 Generate API docs with TypeDoc:
 
 ```bash
-npm run docs
+npx typedoc
 ```
 
 ---
