@@ -1,6 +1,6 @@
 {
   "name": "@kay1759/web-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reusable web utilities for CSRF, GraphQL, JWT, and React Router responses",
   "license": "MIT",
   "type": "module",
